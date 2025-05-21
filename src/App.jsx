@@ -25,6 +25,9 @@ const PageContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
   background: #fff;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const LeftSection = styled.div`
@@ -37,6 +40,11 @@ const LeftSection = styled.div`
   position: relative;
   justify-content: center;
   padding: 0 2vw;
+  @media (max-width: 768px) {
+    flex: none;
+    min-height: 40vh;
+    padding: 2rem 1rem;
+  }
 `;
 
 const TopRow = styled.div`
@@ -63,6 +71,11 @@ const CenteredImage = styled.img`
   margin: 40px 0 30px 0;
   background: #fff;
   border-radius: 8px;
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 110px;
+    margin: 20px 0;
+  }
 `;
 
 const WelcomeText = styled.div`
@@ -75,6 +88,9 @@ const WelcomeLine = styled.div`
   font-size: 2.2rem;
   font-weight: 400;
   margin-bottom: 18px;
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const SkillFull = styled.span`
@@ -84,12 +100,19 @@ const SkillFull = styled.span`
   color: #000;
   display: block;
   margin: 10px 0;
+  @media (max-width: 768px) {
+    font-size: 1.7rem;
+  }
 `;
 
 const World = styled.div`
   font-size: 2rem;
   font-weight: 300;
   margin-top: 30px;
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+    margin-top: 20px;
+  }
 `;
 
 const RightSection = styled.div`
@@ -101,6 +124,11 @@ const RightSection = styled.div`
   justify-content: flex-start;
   padding: 0 2vw;
   position: relative;
+  @media (max-width: 768px) {
+    flex: none;
+    min-height: 60vh;
+    padding: 1rem;
+  }
 `;
 
 const RightLogo = styled.img`
@@ -109,6 +137,11 @@ const RightLogo = styled.img`
   object-fit: contain;
   margin: 30px auto 10px auto;
   display: block;
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+    margin: 20px auto 5px auto;
+  }
 `;
 
 const WelcomeHeader = styled.div`
@@ -118,6 +151,9 @@ const WelcomeHeader = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   text-align: left;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;
 
 const SubHeader = styled.div`
@@ -125,6 +161,10 @@ const SubHeader = styled.div`
   font-size: 1.2rem;
   margin-bottom: 30px;
   text-align: left;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
 `;
 
 const LoginForm = styled.form`
@@ -133,6 +173,10 @@ const LoginForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 25px;
+  @media (max-width: 768px) {
+    max-width: 100%;
+    gap: 20px;
+  }
 `;
 
 const Label = styled.label`
@@ -736,10 +780,15 @@ const TimeSlotContainer = styled.div`
   background: url(${slotBg}) center center/cover no-repeat;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 1rem;
+    background-position: center;
+  }
 `;
+
 const TimeSlotHeading = styled.h2`
   position: absolute;
   top: 40px;
@@ -751,26 +800,73 @@ const TimeSlotHeading = styled.h2`
   letter-spacing: 2px;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 2;
+  text-align: center;
+  width: 100%;
+  padding: 0 1rem;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    top: 24px;
+  }
 `;
+
 const TimeSlotList = styled.div`
-  margin-left: 20vw;
-  margin-top: 4vh;
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 2rem;
+  margin-top: 4vh;
+  @media (max-width: 768px) {
+    gap: 2rem;
+    padding: 0 1rem;
+    margin-top: 2vh;
+    margin-bottom: 120px;
+  }
 `;
+
 const TimeSlotLabel = styled.label`
   font-size: 2.2rem;
   color: #fff;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.2rem;
   font-weight: 400;
+  width: 100%;
+  max-width: 400px;
+  cursor: pointer;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+  }
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+    gap: 0.8rem;
+    padding: 0.6rem 1.2rem;
+  }
 `;
+
 const TimeSlotRadio = styled.input`
   width: 32px;
   height: 32px;
+  cursor: pointer;
+  position: absolute;
+  right: 1.5rem;
+  @media (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+    right: 1.2rem;
+  }
 `;
+
 const BookButton = styled.button`
   position: absolute;
   right: 18vw;
@@ -786,12 +882,36 @@ const BookButton = styled.button`
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.13);
-  transition: background 0.2s;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 10;
   &:hover {
     background: #1b3939;
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 768px) {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    right: auto;
+    top: auto;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 120px;
+    font-size: 1.8rem;
+    &:hover {
+      transform: translateX(-50%) scale(1.05);
+    }
+  }
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 100px;
+    font-size: 1.6rem;
+    bottom: 16px;
+    border-radius: 8px;
   }
 `;
 
