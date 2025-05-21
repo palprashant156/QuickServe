@@ -777,7 +777,7 @@ function MaidPage() {
 const TimeSlotContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: url(${slotBg}) center center/cover no-repeat;
+  background: linear-gradient(135deg, #2d5c5c 0%, #1b3939 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -785,7 +785,6 @@ const TimeSlotContainer = styled.div`
   position: relative;
   @media (max-width: 768px) {
     padding: 1rem;
-    background-position: center;
   }
 `;
 
@@ -919,12 +918,15 @@ const BookButton = styled.button`
 const BankContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: url(${bankBg}) center center/cover no-repeat;
+  background: linear-gradient(135deg, #7ed6d6 0%, #2d5c5c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 const BankHeading = styled.h1`
   margin-top: 32px;
@@ -1043,12 +1045,15 @@ function TimeSlotPage() {
 const PaymentContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: url(${cardsBg}) center center/cover no-repeat;
+  background: linear-gradient(135deg, #e5392e 0%, #b92b22 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 const PaymentHeading = styled.h1`
   margin-top: 32px;
@@ -1090,12 +1095,15 @@ const PaymentButton = styled.button`
 const CardDetailsContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: url(${cardDetailBg}) center center/cover no-repeat;
+  background: linear-gradient(135deg, #2d5c5c 0%, #1b3939 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 const CardDetailsHeading = styled.h2`
   margin-top: 24px;
@@ -1220,12 +1228,15 @@ function CardDetailsPage() {
 const NetbankingContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: url(${netbankingBg}) center center/cover no-repeat;
+  background: linear-gradient(135deg, #8e24aa 0%, #4a148c 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 const NetbankingHeading = styled.h2`
   margin-top: 32px;
