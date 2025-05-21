@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "@emotion/styled";
 import { motion, AnimatePresence } from "framer-motion";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -777,6 +777,7 @@ function MaidPage() {
 const TimeSlotContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
+  background: #2d5c5c; /* Fallback color */
   background: url(${slotBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -918,6 +919,7 @@ const BookButton = styled.button`
 const BankContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
+  background: #7ed6d6; /* Fallback color */
   background: url(${bankBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -1047,6 +1049,7 @@ function TimeSlotPage() {
 const PaymentContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
+  background: #e5392e; /* Fallback color */
   background: url(${cardsBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -1097,6 +1100,7 @@ const PaymentButton = styled.button`
 const CardDetailsContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
+  background: #2d5c5c; /* Fallback color */
   background: url(${cardDetailBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -1230,6 +1234,7 @@ function CardDetailsPage() {
 const NetbankingContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
+  background: #8e24aa; /* Fallback color */
   background: url(${netbankingBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -1399,7 +1404,21 @@ function PaymentSuccessPage() {
   );
 }
 
+// Add image preloading
+const preloadImages = () => {
+  const images = [slotBg, bankBg, cardsBg, cardDetailBg, netbankingBg];
+  images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
+// Modify App component
 export default function App() {
+  useEffect(() => {
+    preloadImages();
+  }, []);
+
   return (
     <Routes>
       <Route
