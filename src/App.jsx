@@ -777,7 +777,7 @@ function MaidPage() {
 const TimeSlotContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #2d5c5c 0%, #1b3939 100%);
+  background: url(${slotBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -918,7 +918,7 @@ const BookButton = styled.button`
 const BankContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #7ed6d6 0%, #2d5c5c 100%);
+  background: url(${bankBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -985,6 +985,7 @@ function BankSelectionPage() {
   const [selected, setSelected] = useState("SBI");
   const navigate = useNavigate();
   const banks = ["SBI", "ICICI", "HDFC", "BOB"];
+
   return (
     <BankContainer>
       <BankHeading>CHOOSE YOUR BANK</BankHeading>
@@ -1019,6 +1020,7 @@ function TimeSlotPage() {
   const [selected, setSelected] = useState("");
   const navigate = useNavigate();
   const slots = ["9:00–12:00", "12:00–1:00", "3:00–6:00"];
+
   return (
     <TimeSlotContainer>
       <TimeSlotHeading>Book Your Slot</TimeSlotHeading>
@@ -1045,7 +1047,7 @@ function TimeSlotPage() {
 const PaymentContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #e5392e 0%, #b92b22 100%);
+  background: url(${cardsBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1095,7 +1097,7 @@ const PaymentButton = styled.button`
 const CardDetailsContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #2d5c5c 0%, #1b3939 100%);
+  background: url(${cardDetailBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1228,7 +1230,7 @@ function CardDetailsPage() {
 const NetbankingContainer = styled.div`
   min-height: 100vh;
   width: 100vw;
-  background: linear-gradient(135deg, #8e24aa 0%, #4a148c 100%);
+  background: url(${netbankingBg}) no-repeat center center/cover;
   display: flex;
   flex-direction: column;
   align-items: center;
